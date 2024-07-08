@@ -1,20 +1,17 @@
-data class Node<T>(var value: T, var next: Node<T>? = null) {
-    override fun toString(): String {
-        return if (next != null) {
-            "$value -> ${next.toString()}"
-        } else {
-            "$value"
-        }
+fun createListWithValues(size: Int): Node<Int>? {
+    if (size <= 0) return null
+
+    val head = Node(1)
+    var current: Node<Int> = head
+    for (i in 2..size) {
+        val newNode = Node(i)
+        current.next = newNode
+        current = newNode
     }
+    return head
 }
 
 fun main() {
-    val node1 = Node("1")
-    val node2 = Node("2")
-    val node3 = Node("3")
-
-    node1.next = node2
-    node2.next = node3
-
-    println(node1)
+    val newList = createListWithValues(5)
+    println(newList)
 }
