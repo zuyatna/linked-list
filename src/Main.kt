@@ -12,6 +12,14 @@ fun createListWithValues(size: Int): Node<Int>? {
 }
 
 fun main() {
-    val newList = createListWithValues(5)
-    println(newList)
+//    val newList = createListWithValues(5)
+//    println(newList)
+    val nodes1 = Node(value = 1)
+    val nodes2 = Node(value = 2)
+    val nodes3 = Node(value = 3)
+
+    nodes1.next = nodes2
+    nodes2.next = nodes3
+
+    println(nodes1)
 }
