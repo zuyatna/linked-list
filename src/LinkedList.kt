@@ -3,12 +3,13 @@ class LinkedList<T> {
     private var tail: Node<T>? = null
     private var size = 0
 
-    fun push(value: T) {
+    fun push(value: T): LinkedList<T> {
         head = Node(value = value, next = head)
         if (tail == null) {
             tail = head
         }
         size++
+        return this
     }
 
     private fun isEmpty(): Boolean {
