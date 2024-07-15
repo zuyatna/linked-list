@@ -12,6 +12,17 @@ class LinkedList<T> {
         return this
     }
 
+    fun append(value: T) {
+        if (isEmpty()) {
+            push(value)
+            return
+        }
+
+        tail?.next = Node(value = value)
+        tail = tail?.next
+        size++
+    }
+
     private fun isEmpty(): Boolean {
         return size == 0
     }
