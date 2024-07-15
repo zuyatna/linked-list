@@ -25,15 +25,20 @@ fun main() {
 //    println(nodes1)
 
     val list = LinkedList<Int>()
-//    list.push(3)
-//    list.push(2)
-//    list.push(1)
+    list.push(3)
+    list.push(2)
+    list.push(1)
 
 //    list.push(3).push(2).push(1)
 
-    list.append(1)
-    list.append(2)
-    list.append(3)
+//    list.append(1)
+//    list.append(2)
+//    list.append(3)
+
+    var middleNode = list.nodeAt(1)
+    for (i in 1..3) {
+        middleNode = middleNode?.let { list.insert(-1 * i, it) }
+    }
 
     println(list)
 }
